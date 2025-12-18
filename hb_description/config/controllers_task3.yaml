@@ -1,0 +1,44 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 500
+    
+    # Wheel velocity controller
+    forward_velocity_controller:
+      type: velocity_controllers/JointGroupVelocityController
+    
+    # Arm position controller
+    arm_position_controller:
+      type: position_controllers/JointGroupPositionController
+    
+    # Gripper position controller
+    gripper_position_controller:
+      type: position_controllers/JointGroupPositionController
+
+    # Joint state broadcaster
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+# Wheel Velocity Controller Configuration
+forward_velocity_controller:
+  ros__parameters:
+    joints:
+      - rim_left_joint
+      - rim_right_joint
+      - rim_back_joint
+    interface_name: velocity
+
+# Arm Position Controller Configuration
+arm_position_controller:
+  ros__parameters:
+    joints:
+      - arm_lift_joint
+      - arm_extend_joint
+    interface_name: position
+
+# Gripper Position Controller Configuration
+gripper_position_controller:
+  ros__parameters:
+    joints:
+      - gripper_left_joint
+      - gripper_right_joint
+    interface_name: position
