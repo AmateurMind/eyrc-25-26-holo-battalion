@@ -29,8 +29,11 @@ if(BUILD_TESTING)
 endif()
 
 install(
-  PROGRAMS src/holonomic_perception.py
-  PROGRAMS src/holonomic_controller.py
+  PROGRAMS 
+    src/holonomic_perception.py
+    src/holonomic_controller.py
+    src/arm_gripper_controller.py
+    src/task3_controller.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
